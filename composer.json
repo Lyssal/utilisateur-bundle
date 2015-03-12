@@ -1,0 +1,28 @@
+{
+	"name" : "lyssal/utilisateur-bundle",
+	"description" : "Bundle Lyssal gérant les utilisateurs",
+	"license" : "proprietary",
+	"keywords" : [
+		"utilisateur",
+		"user"
+	],
+	"type" : "symfony-bundle",
+	"authors" : [{
+			"name" : "Rémi Leclerc",
+			"homepage" : "http://www.lyssal.com/"
+		}
+	],
+	"require" : {
+		"friendsofsymfony/user-bundle" : "1.*"
+	},
+    "suggest": {
+        "lyssal/admin-bundle": "Pour gérer LyssalTourismeBundle depuis la console administrative (basé sur SonataAdmin)",
+        "sonata-project/admin-bundle": "Pour gérer les entités depuis la console administrative"
+    },
+	"autoload" : {
+		"psr-0" : {
+			"Lyssal\\UtilisateurBundle" : "src/"
+		}
+	},
+	"target-dir" : "Lyssal/UtilisateurBundle"
+}
