@@ -2,6 +2,8 @@
 
 `LyssalUtilisateurBundle` permet de gérer les utilisateurs. Le bundle se base sur `FOSUser`.
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b8d0b0d0-f8ad-439a-94de-d33414d9f6cc/small.png)](https://insight.sensiolabs.com/projects/b8d0b0d0-f8ad-439a-94de-d33414d9f6cc)
+
 
 ## Entités
 
