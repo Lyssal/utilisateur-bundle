@@ -50,7 +50,7 @@ class EditableRolesBuilder
 
             $isMaster = $admin->isGranted('MASTER');
             $securityHandler = $admin->getSecurityHandler();
-            // TODO get the base role from the admin or security handler
+            
             $baseRole = $securityHandler->getBaseRole($admin);
 
             foreach ($admin->getSecurityInformation() as $role => $permissions) {
