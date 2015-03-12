@@ -21,8 +21,7 @@
     },
 	"autoload" : {
 		"psr-0" : {
-			"Lyssal\\UtilisateurBundle" : "src/"
+			"Lyssal\\UtilisateurBundle" : "src"
 		}
-	},
-	"target-dir" : "Lyssal/UtilisateurBundle"
+	}
 }
