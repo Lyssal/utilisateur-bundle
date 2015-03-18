@@ -23,14 +23,14 @@ abstract class Utilisateur extends AbstractedUtilisateur
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="user_date_creation", type="datetime", nullable=false)
+     * @ORM\Column(name="date_creation", type="datetime", nullable=false)
      */
     private $dateCreation;
     
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="user_date_modification", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modification", type="datetime", nullable=false)
      */
     private $dateModification;
     
