@@ -136,8 +136,8 @@ class UtilisateurAdmin extends Admin
      */
     public function prePersist($user)
     {
-        $user->setCreatedAt(new \DateTime());
-        $user->setUpdatedAt(new \DateTime());
+        $user->setDateCreation(new \DateTime());
+        $user->setDateModification(new \DateTime());
     }
     /**
      * {@inheritdoc}
@@ -146,7 +146,7 @@ class UtilisateurAdmin extends Admin
     {
         $this->getUserManager()->updateCanonicalFields($user);
         $this->getUserManager()->updatePassword($user);
-        $user->setUpdatedAt(new \DateTime());
+        $user->setDateModification(new \DateTime());
     }
 
     /**
