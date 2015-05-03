@@ -141,3 +141,9 @@ new Lyssal\UtilisateurBundle\LyssalUtilisateurBundle(),
 ```sh
 php app/console doctrine:schema:update --force
 ```
+5. Mettez à jour le `routing.yml` :
+```sh
+lyssal_utilisateur:
+    resource: "@LyssalUtilisateurBundle/Resources/config/routing.yml"
+    prefix: /
+```
