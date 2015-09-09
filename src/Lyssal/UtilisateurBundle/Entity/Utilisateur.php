@@ -20,19 +20,20 @@ abstract class Utilisateur extends AbstractedUtilisateur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_creation", type="datetime", nullable=false)
      */
-    private $dateCreation;
+    protected $dateCreation;
     
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_modification", type="datetime", nullable=false)
      */
-    private $dateModification;
+    protected $dateModification;
     
     /**
      * @var array
