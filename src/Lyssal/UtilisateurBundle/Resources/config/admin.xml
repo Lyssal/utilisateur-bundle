@@ -11,10 +11,7 @@
 
     <services>
         <service id="lyssal.utilisateur.admin.utilisateur" class="%lyssal.utilisateur.admin.utilisateur.class%">
-            <call method="setRouteBuilder">
-                <argument type="service" id="sonata.admin.route.path_info_slashes" />
-            </call>
-            <tag name="sonata.admin" manager_type="orm" group="Utilisateurs" label="Utilisateurs" icon="&lt;i class='fa fa-group'&gt;&lt;/i&gt;" />
+            <tag name="sonata.admin" manager_type="orm" group="Utilisateurs" label="Utilisateurs" icon="&lt;i class='fa fa-group'&gt;&lt;/i&gt;" route_builder="sonata.admin.route.path_info" />
             <argument/>
             <argument>%fos_user.model.user.class%</argument>
             <argument>SonataAdminBundle:CRUD</argument>
@@ -23,29 +20,18 @@
             </call>
         </service>
         <service id="lyssal.utilisateur.admin.utilisateur_groupe" class="%lyssal.utilisateur.admin.utilisateur_groupe.class%">
-            <tag name="sonata.admin" manager_type="orm" group="Utilisateurs" label="Groupes d'utilisateur" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <tag name="sonata.admin" manager_type="orm" group="Utilisateurs" label="Groupes d'utilisateur" route_builder="sonata.admin.route.path_info" label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument />
             <argument>%fos_user.model.group.class%</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             </service>
         <service id="lyssal.utilisateur.admin.civilite" class="%lyssal.utilisateur.admin.civilite.class%">
-            <tag name="sonata.admin" manager_type="orm" group="Utilisateurs" label="Titres de civilité" />
+            <tag name="sonata.admin" manager_type="orm" group="Utilisateurs" label="Titres de civilité" route_builder="sonata.admin.route.path_info" />
             <argument />
             <argument>%lyssal.utilisateur.entity.civilite.class%</argument>
             <argument>SonataAdminBundle:CRUD</argument>
         </service>
-        
-        <service id="sonata.user.editable_role_builder" class="Lyssal\UtilisateurBundle\Security\EditableRolesBuilder">
-            <argument type="service" id="security.context" />
-            <argument type="service" id="sonata.admin.pool" />
-            <argument>%security.role_hierarchy.roles%</argument>
-            <argument type="service" id="translator" />
-        </service>
 
-        <service id="lyssal.utilisateur.form.type.security_roles" class="Lyssal\UtilisateurBundle\Form\Type\SecurityRolesType">
-            <tag name="form.type" alias="lyssal_security_roles" />
-            <argument type="service" id="sonata.user.editable_role_builder" />
-        </service>
     </services>
 
 </container>
