@@ -90,11 +90,29 @@ Exemple avec sur `Acme/UtilisateurBundle/Resources/config/services.xml` :
 ```xml
 <?xml version="1.0" ?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <!-- ... -->
     <parameters>
         <parameter key="lyssal.utilisateur.entity.civilite.class">Acme\UtilisateurBundle\Entity\Civilite</parameter>
     </parameters>
 </container>
 ```
+
+Si vous utilisez `SonataAdmin`, ajoutez dans les services de votre `Acme/UtilisateurBundle/Resources/config/services.xml` :
+
+```xml
+<service id="sonata.user.editable_role_builder" class="Lyssal\UtilisateurBundle\Security\EditableRolesBuilder">
+    <argument type="service" id="security.context" />
+    <argument type="service" id="sonata.admin.pool" />
+    <argument>%security.role_hierarchy.roles%</argument>
+    <argument type="service" id="translator" />
+</service>
+
+<service id="lyssal.utilisateur.form.type.security_roles" class="Lyssal\UtilisateurBundle\Form\Type\SecurityRolesType">
+    <tag name="form.type" alias="lyssal_security_roles" />
+    <argument type="service" id="sonata.user.editable_role_builder" />
+</service>
+```
+
 
 Les paramètres suivants, gérés par `FOSUser`, doivent également être définis (reportez-vous à la documentation de `FOSUserBundle` pour plus d'informations) :
 * `fos_user.model.user.class`
