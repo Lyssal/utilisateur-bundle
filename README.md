@@ -43,7 +43,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="acme_utilisateur")
- * @ORM\Entity
+ * @ORM\Entity()
  */
 class Utilisateur extends BaseUtilisateur
 {

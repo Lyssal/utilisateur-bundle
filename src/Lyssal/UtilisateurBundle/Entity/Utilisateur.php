@@ -7,7 +7,7 @@ use FOS\UserBundle\Model\GroupInterface;
 
 /**
  * @ORM\Table(name="lyssal_utilisateur")
- * @ORM\MappedSuperclass
+ * @ORM\MappedSuperclass()
  * @ORM\HasLifecycleCallbacks()
  */
 abstract class Utilisateur extends AbstractedUtilisateur
@@ -41,7 +41,7 @@ abstract class Utilisateur extends AbstractedUtilisateur
      * @ORM\ManyToMany(targetEntity="UtilisateurGroupe", cascade="persist")
      * @ORM\JoinTable(name="lyssal_utilisateur_a_utilisateur_groupe", joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}, inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")})
      */
-    protected $groupes;
+    protected $groups;
     
     
     /**
@@ -102,39 +102,6 @@ abstract class Utilisateur extends AbstractedUtilisateur
     public function getDateModification()
     {
         return $this->dateModification;
-    }
-    
-    /**
-     * Add groupe
-     *
-     * @param \Lyssal\UtilisateurBundle\Entity\UtilisateurGroupe $groupe
-     * @return Lyssal\UtilisateurBundle\Entity\Utilisateur
-     */
-    public function addGroupe(GroupInterface $groupe)
-    {
-        $this->groupes[] = $groupe;
-
-        return $this;
-    }
-
-    /**
-     * Remove groupe
-     *
-     * @param \Lyssal\UtilisateurBundle\Entity\UtilisateurGroupe $groupe
-     */
-    public function removeGroupe(GroupInterface $groupe)
-    {
-        $this->groupes->removeElement($groupe);
-    }
-
-    /**
-     * Get groupes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getGroupes()
-    {
-        return $this->groupes;
     }
 
     /**
