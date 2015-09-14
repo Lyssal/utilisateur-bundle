@@ -8,10 +8,19 @@
     </parameters>
 
     <services>
+        <service id="fos_user.user_manager.default" class="%fos_user.user_manager.class%" public="false">
+            <argument type="service" id="security.encoder_factory" />
+            <argument type="service" id="fos_user.util.username_canonicalizer" />
+            <argument type="service" id="fos_user.util.email_canonicalizer" />
+            <argument type="service" id="fos_user.entity_manager" />
+            <argument>%fos_user.model.user.class%</argument>
+        </service>
         <service id="lyssal.utilisateur.manager.civilite" class="%lyssal.utilisateur.manager.civilite.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%lyssal.utilisateur.entity.civilite.class%</argument>
         </service>
     </services>
+
+
 
 </container>

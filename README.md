@@ -1,6 +1,6 @@
 # LyssalUtilisateurBundle
 
-`LyssalUtilisateurBundle` permet de gérer les utilisateurs. Le bundle se base sur `FOSUser`.
+`LyssalUtilisateurBundle` permet de gérer les utilisateurs. Le bundle se base sur `FOSUser` avec `Doctrine ORM`.
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b8d0b0d0-f8ad-439a-94de-d33414d9f6cc/small.png)](https://insight.sensiolabs.com/projects/b8d0b0d0-f8ad-439a-94de-d33414d9f6cc)
 
@@ -124,7 +124,7 @@ Les paramètres suivants, gérés par `FOSUser`, doivent également être défin
 Les services sont :
 * `fos_user.user_manager`
 * `fos_user.group_manager`
-* `lyssal.tourisme.manager.structure_type`
+* `lyssal.utilisateur.manager.civilite`
 
 À noter que les managers `fos_user.user_manager` et `fos_user.group_manager` sont hérités des managers de `FOSUser`.
 
