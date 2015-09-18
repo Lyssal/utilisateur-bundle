@@ -12,6 +12,8 @@
 
     <parameters>
         <parameter key="lyssal.utilisateur.entity.civilite.class">Lyssal\UtilisateurBundle\Entity\Civilite</parameter>
+        <parameter key="lyssal.utilisateur.entity.utilisateur.class">Lyssal\UtilisateurBundle\Entity\Utilisateur</parameter>
+        <parameter key="lyssal.utilisateur.entity.utilisateur_groupe.class">Lyssal\UtilisateurBundle\Entity\UtilisateurGroupe</parameter>
     </parameters>
 
 </container>

@@ -84,6 +84,8 @@ class Civilite extends BaseCivilite
 
 Vous devez ensuite redéfinir les paramètres suivants :
 * `lyssal.utilisateur.entity.civilite.class` : Acme\UtilisateurBundle\Entity\Civilite
+* `lyssal.utilisateur.entity.utilisateur.class` : Acme\UtilisateurBundle\Entity\Utilisateur
+* `lyssal.utilisateur.entity.utilisateur_groupe.class` : Acme\UtilisateurBundle\Entity\UtilisateurGroupe
 
 Exemple avec sur `Acme/UtilisateurBundle/Resources/config/services.xml` :
 
@@ -93,6 +95,8 @@ Exemple avec sur `Acme/UtilisateurBundle/Resources/config/services.xml` :
     <!-- ... -->
     <parameters>
         <parameter key="lyssal.utilisateur.entity.civilite.class">Acme\UtilisateurBundle\Entity\Civilite</parameter>
+        <parameter key="lyssal.utilisateur.entity.utilisateur.class">Acme\UtilisateurBundle\Entity\Utilisateur</parameter>
+        <parameter key="lyssal.utilisateur.entity.utilisateur_groupe.class">Acme\UtilisateurBundle\Entity\UtilisateurGroupe</parameter>
     </parameters>
 </container>
 ```
@@ -125,6 +129,8 @@ Les services sont :
 * `fos_user.user_manager`
 * `fos_user.group_manager`
 * `lyssal.utilisateur.manager.civilite`
+* `lyssal.utilisateur.manager.utilisateur`
+* `lyssal.utilisateur.manager.utilisateur_groupe`
 
 À noter que les managers `fos_user.user_manager` et `fos_user.group_manager` sont hérités des managers de `FOSUser`.
 
