@@ -5,6 +5,7 @@
 
     <imports>
         <import resource="manager.xml" />
+        <import resource="decorator.xml" />
         <import resource="admin.xml" />
     </imports>
 

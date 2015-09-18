@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="lyssal.utilisateur.decorator.civilite.class">Lyssal\UtilisateurBundle\Decorator\CiviliteDecorator</parameter>
+        <parameter key="lyssal.utilisateur.decorator.utilisateur.class">Lyssal\UtilisateurBundle\Decorator\UtilisateurDecorator</parameter>
+        <parameter key="lyssal.utilisateur.decorator.utilisateur_groupe.class">Lyssal\UtilisateurBundle\Decorator\UtilisateurGroupeDecorator</parameter>
+    </parameters>
+
+    <services>
+        <service id="lyssal.utilisateur.decorator.civilite" class="%lyssal.utilisateur.decorator.civilite.class%">
+            <argument type="service" id="router" />
+            <argument type="service" id="lyssal.decorator" />
+            <tag name="decorator_handler" />
+        </service>
+        <service id="lyssal.utilisateur.decorator.utilisateur" class="%lyssal.utilisateur.decorator.utilisateur.class%">
+            <argument type="service" id="router" />
+            <argument type="service" id="lyssal.decorator" />
+            <tag name="decorator_handler" />
+        </service>
+        <service id="lyssal.utilisateur.decorator.utilisateur_groupe" class="%lyssal.utilisateur.decorator.utilisateur_groupe.class%">
+            <argument type="service" id="router" />
+            <argument type="service" id="lyssal.decorator" />
+            <tag name="decorator_handler" />
+        </service>
+    </services>
+
+</container>
