@@ -10,7 +10,6 @@ use FOS\UserBundle\Model\UserManagerInterface;
 
 class UtilisateurAdmin extends Admin
 {
-
     /**
      * {@inheritdoc}
      */
@@ -47,7 +46,7 @@ class UtilisateurAdmin extends Admin
         $listMapper
             ->addIdentifier('username')
             ->add('email')
-            ->add('groupes')
+            ->add('groups')
             ->add('enabled', null, array('editable' => true))
             ->add('locked', null, array('editable' => true))
             ->add('createdAt')
@@ -71,7 +70,7 @@ class UtilisateurAdmin extends Admin
             ->add('username')
             ->add('locked')
             ->add('email')
-            ->add('groupes')
+            ->add('groups')
         ;
     }
 
@@ -86,7 +85,7 @@ class UtilisateurAdmin extends Admin
                 ->add('email')
             ->end()
             ->with('Groups')
-                ->add('groupes')
+                ->add('groups')
             ->end()
         ;
     }
@@ -105,7 +104,7 @@ class UtilisateurAdmin extends Admin
                 ))
             ->end()
             ->with('Groups')
-                ->add('groupes', 'sonata_type_model', array(
+                ->add('groups', 'sonata_type_model', array(
                     'required' => false,
                     'expanded' => true,
                     'multiple' => true
