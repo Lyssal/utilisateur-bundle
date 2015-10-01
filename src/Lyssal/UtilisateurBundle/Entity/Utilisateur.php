@@ -3,7 +3,6 @@ namespace Lyssal\UtilisateurBundle\Entity;
 
 use FOS\UserBundle\Entity\User as AbstractedUtilisateur;
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\GroupInterface;
 
 /**
  * @ORM\Table(name="lyssal_utilisateur")
