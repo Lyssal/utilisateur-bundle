@@ -37,8 +37,8 @@ abstract class Utilisateur extends AbstractedUtilisateur
     /**
      * @var array
      *
-     * @ORM\ManyToMany(targetEntity="UtilisateurGroupe", cascade="persist")
-     * @ORM\JoinTable(name="lyssal_utilisateur_a_utilisateur_groupe", joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}, inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")})
+     * @ORM\ManyToMany(targetEntity="UtilisateurGroupe", cascade={"persist"})
+     * @ORM\JoinTable(name="lyssal_utilisateur_a_utilisateur_groupe", joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")}, inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id", onDelete="CASCADE")})
      */
     protected $groups;
     
