@@ -20,7 +20,7 @@ Les entités sont :
 Vous devez créer un bundle héritant `LyssalUtilisateurBundle` :
 
 ```php
-namespace Acme\TourismeBundle;
+namespace Acme\UtilisateurBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
